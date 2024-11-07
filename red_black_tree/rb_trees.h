@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 
 /**
  * enum rb_color_e - Possible color of a Red-Black tree
@@ -38,5 +39,12 @@ typedef struct rb_tree_s
 
 /* task 0 */
 rb_tree_t *rb_tree_node(rb_tree_t *parent, int value, rb_color_t color);
+
+/* task 1 */
+int rb_tree_is_valid(const rb_tree_t *tree);
+int bst_true(const rb_tree_t *tree, int *prev);
+int check_colors(const rb_tree_t *tree);
+size_t black_height(const rb_tree_t *tree);
+size_t total_black_nodes(size_t left, size_t right);
 
 #endif

@@ -8,7 +8,15 @@
  */
 int rb_tree_is_valid(const rb_tree_t *tree)
 {
+	int prev = INT_MIN;
 
+	if (!tree)
+		return (0);
+
+	if (!bst_true(tree, &prev))
+		return (0);
+
+	return (check_colors(tree));
 }
 
 /**

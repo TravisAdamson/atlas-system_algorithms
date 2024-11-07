@@ -28,15 +28,15 @@ int rb_tree_is_valid(const rb_tree_t *tree)
 */
 int bst_true(const rb_tree_t *tree, int *prev)
 {
-	if (!tree)
-		return (0);
-	if (!bst_true(tree->left, prev))
-		return (0);
-	if (tree->n <= *prev)
-		return (0);
-	*prev = tree->n;
-	return (bst_true(tree->right, prev));
-
+	if (tree)
+	{
+		if (!bst_true(tree->left, prev))
+			return (0);
+		if (tree->n <= *prev)
+			return (0);
+		*prev = tree->n;
+		return (bst_true(tree->right, prev));
+	}
 	return (1);
 }
 
@@ -88,10 +88,10 @@ size_t black_height(const rb_tree_t *tree)
 
 	if (tree->color == BLACK)
 		return (1 + total_black_nodes(black_height(tree->left),
-									  black_height(tree->right)));
+									black_height(tree->right)));
 	else
 		return (total_black_nodes(black_height(tree->left),
-								  black_height(tree->right)));
+								black_height(tree->right)));
 }
 
 /**

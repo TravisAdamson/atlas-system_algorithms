@@ -24,7 +24,7 @@ int rb_tree_is_valid(const rb_tree_t *tree)
  * @tree: A node in the tree to check
  * @prev: Starting int
  *
- * return: 1 if valid, 0 if not or if tree is NULL
+ * Return: 1 if valid, 0 if not or if tree is NULL
 */
 int bst_true(const rb_tree_t *tree, int *prev)
 {
@@ -44,7 +44,7 @@ int bst_true(const rb_tree_t *tree, int *prev)
  * check_colors - Checks that the node colors are valid
  * @tree: A node in the tree to check
  *
- * return: 1 if colors are valid, 0 if not or if NULL tree
+ * Return: 1 if colors are valid, 0 if not or if NULL tree
 */
 int check_colors(const rb_tree_t *tree)
 {
@@ -100,7 +100,7 @@ size_t black_height(const rb_tree_t *tree)
  * @left: left side
  * @right: right side
  *
- * return: The highest value of the two
+ * Return: The highest value of the two
 */
 size_t total_black_nodes(size_t left, size_t right)
 {

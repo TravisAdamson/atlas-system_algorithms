@@ -138,13 +138,10 @@ rb_tree_t *parent_red_uncle_black(rb_tree_t *node)
 
 	if (node)
 		parent = node->parent;
-
 	if (parent)
 		g_parent = parent->parent;
-
 	if (!parent || !g_parent)
 		return (NULL);
-
 	if (node == parent->right && parent == g_parent->left)
 	{
 		post_root = rotate_left(parent);
@@ -155,28 +152,22 @@ rb_tree_t *parent_red_uncle_black(rb_tree_t *node)
 		post_root = rotate_right(parent);
 		node = node->right;
 	}
-
 	if (node)
 		parent = node->parent;
 	else
 		parent = NULL;
-
 	if (parent)
 		g_parent = parent->parent;
 	else
 		g_parent = NULL;
-
 	if (node == parent->left)
 		post_root = rotate_right(g_parent);
 	else
 		post_root = rotate_left(g_parent);
-
 	while (post_root && post_root->parent)
 		post_root = post_root->parent;
-
 	parent->color = BLACK;
 	g_parent->color = RED;
-
 	return (post_root);
 }
 

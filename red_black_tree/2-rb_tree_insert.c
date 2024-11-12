@@ -150,7 +150,7 @@ rb_tree_t *parent_red_uncle_black(rb_tree_t *node)
 		post_root = rotate_left(parent);
 		node = node->left;
 	}
-	else if (node = parent->left && parent == g_parent->right)
+	else if (node == parent->left && parent == g_parent->right)
 	{
 		post_root = rotate_right(parent);
 		node = node->right;

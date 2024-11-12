@@ -47,4 +47,13 @@ int check_colors(const rb_tree_t *tree);
 size_t black_height(const rb_tree_t *tree);
 size_t total_black_nodes(size_t left, size_t right);
 
+/* task 2 */
+rb_tree_t *rb_tree_insert(rb_tree_t **tree, int value);
+rb_tree_t *add_rb_tree(rb_tree_t *tree, int value);
+rb_tree_t *adjust_tree(rb_tree_t *root, rb_tree_t *node);
+rb_tree_t *check_uncle(rb_tree_t *node);
+rb_tree_t *parent_red_uncle_black(rb_tree_t *node);
+rb_tree_t *rotate_left(rb_tree_t *tree);
+rb_tree_t *rotate_right(rb_tree_t *tree);
+
 #endif

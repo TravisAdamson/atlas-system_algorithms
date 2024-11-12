@@ -214,3 +214,38 @@ rb_tree_t *rotate_left(rb_tree_t *tree)
 
 	return (rotated);
 }
+
+/**
+ * rotate_right - Right child becomes new root, tree rotated
+ *
+ * @tree: tree to right rotate
+ * Return: pointer to new root node, or NULL if `root` is NULL
+ */
+rb_tree_t *rotate_right(rb_tree_t *tree)
+{
+	rb_tree_t *rotated = NULL;
+
+		if (!tree)
+			return (NULL);
+
+	rotated = tree->left;
+
+	tree->left = rotated->right;
+	if (rotated->right)
+		rotated->right->parent = tree;
+
+	rotated->parent = tree->parent;
+
+	if (tree->parent)
+	{
+		if (tree == tree->parent->right)
+			tree->parent->right = rotated;
+		else
+			tree->parent->left = rotated;
+	}
+
+	rotated->right = tree;
+	tree->parent = rotated;
+
+	return (rotated);
+}

@@ -3,6 +3,7 @@
 
 #include <stddef.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * enum edge_type_e - Enumerates the different types of
@@ -69,5 +70,8 @@ typedef struct graph_s
 
 /* task 1 */
 graph_t *graph_create(void);
+
+/* task 2 */
+vertex_t *graph_add_vertex(graph_t *graph, const char *str);
 
 #endif

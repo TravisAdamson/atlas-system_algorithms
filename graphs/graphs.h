@@ -74,4 +74,9 @@ graph_t *graph_create(void);
 /* task 2 */
 vertex_t *graph_add_vertex(graph_t *graph, const char *str);
 
+/* task 3 */
+int graph_add_edge(graph_t *graph, const char *src,
+		   const char *dest, edge_type_t type);
+edge_t *graph_add_indiv_edge(vertex_t *src, vertex_t *dest);
+
 #endif

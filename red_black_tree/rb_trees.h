@@ -59,4 +59,8 @@ rb_tree_t *rotate_right(rb_tree_t *tree);
 /* task 3 */
 rb_tree_t *array_to_rb_tree(int *array, size_t size);
 
+/* task 4 */
+rb_tree_t *tree_successor(rb_tree_t *node);
+rb_tree_t *rb_tree_remove(rb_tree_t *root, int n);
+
 #endif

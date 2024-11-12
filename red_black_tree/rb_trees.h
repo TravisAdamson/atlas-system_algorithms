@@ -56,4 +56,7 @@ rb_tree_t *parent_red_uncle_black(rb_tree_t *node);
 rb_tree_t *rotate_left(rb_tree_t *tree);
 rb_tree_t *rotate_right(rb_tree_t *tree);
 
+/* task 3 */
+rb_tree_t *array_to_rb_tree(int *array, size_t size);
+
 #endif

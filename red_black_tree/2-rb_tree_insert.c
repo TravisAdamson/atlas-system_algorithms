@@ -107,7 +107,7 @@ rb_tree_t *adjust_tree(rb_tree_t *root, rb_tree_t *node)
 /**
  * check_uncle - Gets the uncle of given node
  *
- * @n: starting node
+ * @node: starting node
  * Return: pointer to uncle node, or NULL if parent or grandparent missing
  */
 rb_tree_t *check_uncle(rb_tree_t *node)

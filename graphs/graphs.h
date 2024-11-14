@@ -83,8 +83,9 @@ edge_t *graph_add_indiv_edge(vertex_t *src, vertex_t *dest);
 void graph_delete(graph_t *graph);
 
 /* task 4 */
-size_t depth_recursion(vertex_t *c_vertex, unsigned char *checked, size_t c_depth,
-		     void (*action)(const vertex_t *v, size_t depth));
+size_t depth_recursion(vertex_t *c_vertex, unsigned char *checked,
+			 size_t c_depth, void (*action)(const vertex_t *v,
+			 size_t depth));
 size_t depth_first_traverse(const graph_t *graph,
 			    void (*action)(const vertex_t *v, size_t depth));
 

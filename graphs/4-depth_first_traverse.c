@@ -15,8 +15,9 @@
  *      depth: depth of v, from the starting vertex
  * Return: largest vertex depth, or `c_depth` on failure
  */
-size_t depth_recursion(vertex_t *c_vertex, unsigned char *checked, size_t c_depth,
-		     void (*action)(const vertex_t *v, size_t depth))
+size_t depth_recursion(vertex_t *c_vertex, unsigned char *checked,
+			 size_t c_depth, void (*action)(const vertex_t *v,
+			 size_t depth))
 {
 	edge_t *temp_edge = NULL;
 	size_t max_depth, subtree_depth;

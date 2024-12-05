@@ -45,10 +45,7 @@ queue_t *dijkstra_graph(graph_t *graph, vertex_t const *start,
 		this_dist[i] = INT_MAX;
 	if (!find_dist(start, target, graph, this_visit, this_dist, prev))
 	{
-		free(prev);
-		free(this_dist);
-		free(this_visit);
-		free(new_que);
+		free(prev), free(this_dist), free(this_visit), free(new_que);
 		this_visit = NULL, this_dist = NULL, prev = NULL, new_que = NULL;
 		return (NULL);
 	}
@@ -57,9 +54,7 @@ queue_t *dijkstra_graph(graph_t *graph, vertex_t const *start,
 	queue_push_front(new_que, strdup(start->content));
 	queue_push_back(new_que, strdup(target->content));
 
-	free(prev);
-	free(this_dist);
-	free(this_visit);
+	free(prev), free(this_dist), free(this_visit);
 	this_visit = NULL, this_dist = NULL, prev = NULL;
 	return (new_que);
 }

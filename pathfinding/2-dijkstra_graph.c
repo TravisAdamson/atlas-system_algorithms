@@ -23,24 +23,17 @@ queue_t *dijkstra_graph(graph_t *graph, vertex_t const *start,
 	this_visit = calloc(graph->nb_vertices, sizeof(int));
 	if (!this_visit)
 	{
-		free(new_que);
-		return (NULL);
+		return (free(new_que), NULL);
 	}
 	this_dist = calloc(graph->nb_vertices, sizeof(int));
 	if (!this_dist)
 	{
-		free(this_visit);
-		free(new_que);
-		return (NULL);
+		return (free(this_visit), free(new_que), NULL);
 	}
 	prev = calloc(graph->nb_vertices, sizeof(vertex_t *));
 	if (!prev)
 	{
-		free(this_dist);
-		free(this_visit);
-		free(new_que);
-		return (NULL);
-	}
+		return (free(this_dist), free(this_visit), free(new_que), NULL);	}
 	for (i = 0; i < graph->nb_vertices; i++)
 		this_dist[i] = INT_MAX;
 	if (!find_dist(start, target, graph, this_visit, this_dist, prev))

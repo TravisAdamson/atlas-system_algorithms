@@ -31,7 +31,7 @@ queue_t *dijkstra_graph(graph_t *graph, vertex_t const *start,
 						vertex_t const *target);
 
 /* helper prototypes */
-queue_t *backtrack(char **map, int rows, int cols,
+queue_t *recur_back(char **map, int rows, int cols,
 					int x, int y, point_t const *target,
-					queue_t *que, int *visit);
+					queue_t *new_que, int *current_visit);
 #endif

@@ -10,6 +10,8 @@
 
 #define CHECKED current_visit[y * rows + x]
 #define POINT map[next->y][next->x]
+#define GRAPH_CHECK current_visit[vert->index]
+
 /**
  * struct point_s - Structure storing coordinates
  *
@@ -34,4 +36,6 @@ queue_t *dijkstra_graph(graph_t *graph, vertex_t const *start,
 queue_t *recur_back(char **map, int rows, int cols,
 					int x, int y, point_t const *target,
 					queue_t *new_que, int *current_visit);
+queue_t *find_path(vertex_t const *vert, vertex_t const *target, queue_t *new_que,
+					int *current_visit);
 #endif

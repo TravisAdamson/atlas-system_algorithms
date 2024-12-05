@@ -11,6 +11,8 @@
 #define CHECKED current_visit[y * rows + x]
 #define POINT map[next->y][next->x]
 #define GRAPH_CHECK current_visit[vert->index]
+#define NEXT_VERT edge->dest->index
+#define DEST edge->dest->index
 
 /**
  * struct point_s - Structure storing coordinates
@@ -38,4 +40,6 @@ queue_t *recur_back(char **map, int rows, int cols,
 					queue_t *new_que, int *current_visit);
 queue_t *find_path(vertex_t const *vert, vertex_t const *target,
 				   queue_t *new_que, int *current_visit);
+int find_dist(vertex_t const *start, vertex_t const *target, graph_t *graph,
+			  int *this_visit, int *this_dist, vertex_t **prev);
 #endif

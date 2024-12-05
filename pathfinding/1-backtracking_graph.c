@@ -38,8 +38,8 @@ queue_t *backtracking_graph(graph_t *graph, vertex_t const *start,
  * find_path - FInds the requested path
  * @vert: Vertex to check
  * @target: Target to look for
- * @que: que to hold the path
- * @visit: array to track if a vert has been visited
+ * @new_que: que to hold the path
+ * @current_visit: array to track if a vert has been visited
  * Return: que holding path, or NULL
  */
 queue_t *find_path(vertex_t const *vert, vertex_t const *target,

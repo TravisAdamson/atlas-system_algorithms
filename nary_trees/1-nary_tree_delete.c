@@ -3,7 +3,7 @@
 /**
  * nary_tree_delete - deletes an N-ary tree
  *
- * @parent: tree to delete
+ * @tree: tree to delete
  *
  * Return: no return
  */

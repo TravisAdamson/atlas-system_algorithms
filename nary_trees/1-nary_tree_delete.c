@@ -11,7 +11,7 @@ void nary_tree_delete(nary_tree_t *tree)
 {
 	nary_tree_t *temp_tree;
 
-	if(!tree)
+	if (!tree)
 		return;
 	while (tree->children)
 	{

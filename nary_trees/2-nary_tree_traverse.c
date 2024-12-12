@@ -1,7 +1,7 @@
 #include "nary_trees.h"
 
 /**
- * nary_tree_traverse - traverses an N-ary tree
+ * nary_tree_recurse - traverses an N-ary tree
  *
  * @root: The root node of the tree
  * @action: the action to take on the tree
@@ -9,7 +9,7 @@
  *
  * Return: max depth of the tree at root
  */
-size_t nary_tree_traverse(nary_tree_t const *root,
+size_t nary_tree_recurse(nary_tree_t const *root,
 						void (*action)(nary_tree_t const *node, size_t depth),
 						size_t _depth)
 {
@@ -30,4 +30,24 @@ size_t nary_tree_traverse(nary_tree_t const *root,
 	}
 
 	return (max_depth);
+}
+
+/**
+ * nary_tree_traverse - walks through an N-ary tree, node by node
+ *
+ * @root: pointer to the root node of the tree to traverse
+ * @action: pointer to a function
+ *
+ * Return: max depth of the tree pointed to by root
+ */
+size_t nary_tree_traverse(nary_tree_t const *root,
+			  void (*action)(nary_tree_t const *node, size_t depth))
+{
+	if (!action)
+	{
+		fprintf(stderr, "nary_tree_traverse: NULL `action`\n");
+		return (0);
+	}
+
+	return (nary_tree_recurse(root, action, 0));
 }
